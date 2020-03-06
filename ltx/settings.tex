@@ -1,0 +1,164 @@
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+
+\usepackage{amsmath,amssymb}
+% - For bold symbols
+\usepackage{bm} 
+
+\usepackage{comment}
+
+%\usepackage{minted}
+
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{todonotes}
+
+\usepackage{pifont}
+\usepackage{listings}
+
+% Definining some colors
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{Magenta}{rgb}{1.0,0,1.0}
+\definecolor{Gold}{rgb}{1.0,0.843,0.0}
+
+% - Tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [ellipse, minimum width=1.8cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{data} = [rectangle, minimum width=1.8cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\usepackage{listings}
+
+\lstset{ %
+  basicstyle=\scriptsize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  breakautoindent=true,
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+
+% As described in your question the package listings can automatically break
+% long lines. The is limited. The package breaks only on characters which are
+% defined as others. To allow the break at every point you must say listings
+% that a letter isn't a letter. This can be done be redefining the following
+% definition:
+%\makeatletter
+%\def\lst@lettertrue{\let\lst@ifletter\iffalse}
+%\makeatother
+
+
+% Pdf
+%\usepackage[pdftex]{color}
+%\usepackage[pdftex]{graphicx}
+%\usepackage[pdftex,bookmarks=true,bookmarksopen=true]{hyperref}
+%\MyLogo{}
+
+% Bookmark
+\newcounter{bookmark}
+
+% Page size
+%\addtolength{\topmargin}{-1.1in}
+%\addtolength{\textheight}{2.0in}
+%
+%\addtolength{\textwidth}{1.0in}
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{0.5in}
+
+\usepackage[makeroom]{cancel}
+
+%% Line spacing
+%\renewcommand{\baselinestretch}{1.0}
+%\linespread{1.0}
+
+\usepackage[final]{feynmp-auto}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\makeatletter
+\def\endfmffile{%
+	\fmfcmd{\p@rcent\space the end.^^J%
+			end.^^J%
+			endinput;}%
+	\if@fmfio
+		\immediate\closeout\@outfmf
+	\fi
+	\ifnum\pdfshellescape=\@ne
+		\immediate\write18{mpost \thefmffile}%
+	\fi}
+
+%
+\usepackage{tikz}
+
+%
+%\usepackage{enumitem}
+
+%
+\definecolor{PineGreen}{rgb}{0.000,0.25,0.000}
+
+% Etc.
+\usepackage{rotating}
+\usepackage{grffile}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{parskip}
+\usepackage{hepnames}
+
+\makeatletter
+\providecommand*{\@hyperfixhead}{}
+\makeatother
+
+%
+\DeclareGraphicsExtensions{.pdf,.png}
+
+% Caption
+\usepackage{caption}
+%\usepackage{subcaption}
+
+% Tables
+\usepackage{array}
+
+% Hyphenation
+\hyphenpenalty=10000 \exhyphenpenalty=10000
+\renewcommand{\vec}[1]{{\boldsymbol #1}}
+
+% Header
+\newcommand{\header}[1]
+ {
+  \foilhead[0in]{\leftline{\Large\textcolor{blue}{#1}}}
+  \vspace{-1.1in}\textcolor{blue}{\hrule height 2pt}
+  \vspace{0.2in}
+  \pdfbookmark[0]{#1}{\thebookmark} \addtocounter{bookmark}{1}}

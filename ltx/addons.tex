@@ -1,0 +1,116 @@
+
+\definecolor{orange}{rgb}{1.0,0.5,0}
+\definecolor{navy}{rgb}{0.0,0.0,0.5}
+\definecolor{firebrick}{rgb}{0.56,0.14,0.14}
+\definecolor{olive}{rgb}{0.5,0.5,0}
+\definecolor{darkgreen}{rgb}{0.0,0.39,0}
+
+\definecolor{coolblue}{rgb}{0.33,0.6,0.7}
+\definecolor{coolbrown}{rgb}{0.33,0.06,0.07}
+
+
+\newcommand{\kappat}{\textcolor{coolbrown}{\ensuremath{\mathbf{\kappa_{t}}}}}
+\newcommand{\kappal}{\textcolor{coolblue}{\ensuremath{\mathbf{\kappa_{\lambda}}}}}
+
+\newcommand{\yukqq}{\textcolor{coolbrown}{\ensuremath{y_{ht\bar{t}}}}}
+\newcommand{\lambdahhh}{\textcolor{coolblue}{\ensuremath{\lambda_{hhh}}}}
+
+\newcommand{\bbbb}{\textcolor{firebrick}{\ensuremath{\mathbf{bbbb}}}}
+\newcommand{\bbtautau}{\textcolor{navy}{\ensuremath{\mathbf{bb\tau\tau}}}}
+\newcommand{\bbWW}{\textcolor{magenta}{\ensuremath{\mathbf{bbWW}}}}
+\newcommand{\bbyy}{\textcolor{darkgreen}{\ensuremath{\mathbf{bb\gamma\gamma}}}}
+\newcommand{\WWyy}{\textcolor{olive}{\ensuremath{\mathbf{WW\gamma\gamma}}}}
+
+% - For feyn
+\newcommand{\feynlhhh}{.33,,.6,,.7}
+\newcommand{\feynyf}{(.33,,.06,,.07)}
+
+%\newcommand{\hrule}{\rule{\textwidth}{1pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Small citation:
+\newcommand{\cites}[1]{{\footnotesize \cite{#1}}}%
+
+% Pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+
+% Comment
+\renewcommand{\comment}[1]{
+\begin{center}
+#1
+\end{center}
+}
+
+% - Double underline
+\def\doubleunderline#1{\underline{\underline{#1}}}
+
+
+% - Double hat
+%\newlength{\dhatheight}
+\newcommand{\doublehat}[1]{\Hat{\Hat{#1}}}
+%\newcommand{\doublehat}[1]{%
+%    \settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
+%    \addtolength{\dhatheight}{-0.35ex}%
+%    \hat{\vphantom{\rule{1pt}{\dhatheight}}%
+%    \smash{\hat{#1}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Marrow}[6]{%
+    \fmfcmd{style_def marrow#1
+    expr p = drawarrow subpath (1/4, 3/4) of p shifted #6 #2 withpen pencircle scaled 0.4;
+    label.#3(btex #4 etex, point 0.5 of p shifted #6 #2);
+    enddef;}
+    \fmf{marrow#1,tension=0}{#5}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\explain}[2]{\underbrace{#1}_{\footnotesize\raggedright \textrm{#2}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\PlaceText[3]{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[align=center,outer sep=0pt,inner sep=0pt,anchor=south west,rotate=0] 
+at ([xshift=#1,yshift=-#2]current page.north west) {\textcolor{black}{#3}};
+%\node[label={[rotate=-90]right:a long text}outer sep=0pt,inner sep=0pt,anchor=south west] 
+%at ([xshift=#1,yshift=-#2]current page.north west) {\textcolor{red}{#3}};
+%  \node[label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}] at (2.5,1) {};
+\end{tikzpicture}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\StampTextHor[3]{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[align=center,outer sep=0pt,inner sep=0pt,anchor=south west,rotate=0,text width =5cm] 
+at ([xshift=#1,yshift=-#2]current page.north west) {\large\textcolor{red}{#3}};
+%\node[label={[rotate=-90]right:a long text}outer sep=0pt,inner sep=0pt,anchor=south west] 
+%at ([xshift=#1,yshift=-#2]current page.north west) {\textcolor{red}{#3}};
+%  \node[label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}] at (2.5,1) {};
+\end{tikzpicture}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\StampText[3]{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[align=center,outer sep=0pt,inner sep=0pt,anchor=south west,rotate=40,text width =5cm] 
+at ([xshift=#1,yshift=-#2]current page.north west) {\large\textcolor{red}{#3}};
+%\node[label={[rotate=-90]right:a long text}outer sep=0pt,inner sep=0pt,anchor=south west] 
+%at ([xshift=#1,yshift=-#2]current page.north west) {\textcolor{red}{#3}};
+%  \node[label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}] at (2.5,1) {};
+\end{tikzpicture}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\PlaceTextLink[4]{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[align=center,outer sep=0pt,inner sep=0pt,anchor=south west,rotate=0] 
+at ([xshift=#1,yshift=-#2]current page.north west) {\href{#4}{\textcolor{black}{#3}}};
+%\node[label={[rotate=-90]right:a long text}outer sep=0pt,inner sep=0pt,anchor=south west] 
+%at ([xshift=#1,yshift=-#2]current page.north west) {\textcolor{red}{#3}};
+%  \node[label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}] at (2.5,1) {};
+\end{tikzpicture}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\EmphasizeColor}[2]{\textbf{\textcolor{#1}{#2}}}

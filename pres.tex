@@ -1,0 +1,71 @@
+\documentclass[10pt]{beamer}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{ltx/settings}
+\input{ltx/addons}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{bibentry}
+\setbeamersize{text margin left=15pt,text margin right=10pt}
+
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be black
+  linkbordercolor=green,% hyperlink borders will be red
+   urlcolor=blue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ----- Foooter ----- %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{footline}[text line]{%
+\parbox{\linewidth}{\vspace*{-8pt}Footer\hfill \insertframenumber \hfill Author (Affiliation)}}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}{\hskip-10pt\color{blue}\bfseries\insertframetitle\par\vskip-6pt\hskip-10pt\hrulefill}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ----- Title ------ %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{{\Large\textcolor{blue}{\textbf{Title of the talk}}}}
+
+\author{\\ {\bf John Doe}  \\ on behalf of ... }
+
+\institute{
+{\normalsize Meeting venue \\ City}}
+
+%\vspace{-0.3cm}
+\date{01 January, 2100}
+
+\setbeamertemplate{items}[ball]
+
+
+\titlegraphic{
+	\href{http://www.website.com}
+	{\includegraphics[height=0.08\linewidth]{figures/logo/logo.png}}
+	\hspace{0.3cm}
+}
+
+%\setcounter{page}{2}
+
+\begin{document}
+
+% Create title page
+\frame[plain]{\titlepage}
+
+% Set page number counter to 0
+\setcounter{framenumber}{0}
+
+%%%%%%%%%%%%%%%%%%%%
+%% -- Contents -- %%
+%%%%%%%%%%%%%%%%%%%%
+
+\input{content}
+
+%\bibliographystyle{unsrt}
+%\bibliographystyle{hapalike}
+%\bibliographystyle{apalike}
+%\nobibliography{pres}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
